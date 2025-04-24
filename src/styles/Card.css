@@ -1,0 +1,68 @@
+.card {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.card.flipped {
+  transform: rotateY(180deg) translateY(-5px);
+}
+
+.card.flipped:hover {
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.card.matched {
+  cursor: default;
+  transform: translateY(0);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card.matched:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 2em;
+  background-color: #eee;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  background-color: #fff;
+}
+
+.card-front img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.card-back {
+  background-color: #eee;
+}
+
+.card-back img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+}
